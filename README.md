@@ -23,16 +23,21 @@ For example given the project structure:
     oauth_login_service.rb
 </pre>
 
-The following autoloads all ruby files in *~/myproject/app, ~/myproject/lib* and any directories nested within them.
+The following autoloads all ruby files in **~/myproject/app, ~/myproject/lib** and any directories nested within them.
 
-<code>
 <pre>
 root = '~/myproject'
 NoRequire.new( root, ['app', 'lib'] )
 </pre>
-</code>
 
-app.rb can just use Login::LoginService with no require statement
-login_service.rb can use OauthLoginService with no require statement
+**app.rb** can just use **Login::LoginService** with no require statement
+<br/>**login_service.rb** can use **OauthLoginService** with no require statement
+
+In a Sinatra app, these two lines would typically be placed in config.ru after bundler has been run.
+
+## Installation
+
+gem install no_require
+
 
 
